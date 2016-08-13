@@ -14,13 +14,19 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active">
+        <li 
+          <% if params[:controller] == "pages" && params[:action] == "about"%>
+          class="active"
+          <% end %>
+          >
           <a href="<%= pages_about_path %>">
             About 
             <!-- <span class="sr-only">(current)</span> -->
           </a>
         </li>
-        <li><a href="<%= pages_home_path %>">Home</a></li>
+        <li<% if params[:controller] == "pages" && params[:action] == "home"%>
+          class="active"
+          <% end %>><a href="<%= pages_home_path %>">Home</a></li>
         <li><a href="<%= pages_private_path %>">Private</a></li>
       </ul>
       
